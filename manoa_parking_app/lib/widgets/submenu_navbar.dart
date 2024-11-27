@@ -36,44 +36,25 @@ class SubmenuNavbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
+      color: const Color(0xFF234F32), // Green background
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          TextButton(
+          IconButton(
             onPressed: () => (parentIndex != 0 ? _navigateToScreen(context, ParkingHomePage()) : _navigateToParent(context)),
-            child: const Row(
-              children: [
-                Icon(Icons.home),
-                Text('Home'),
-              ],
-            ),
+            icon: const Icon(Icons.home, color: Colors.white), // White icon
           ),
-          TextButton(
+          IconButton(
             onPressed: () => (parentIndex != 1 ? _navigateToScreen(context, Info()) : _navigateToParent(context)),
-            child: const Row(
-              children: [
-                Icon(Icons.info),
-                Text('Info'),
-              ],
-            ),
+            icon: const Icon(Icons.info, color: Colors.white), // White icon
           ),
-          TextButton(
+          IconButton(
             onPressed: () => (parentIndex != 2 ? _navigateToScreen(context, Settings()) : _navigateToParent(context)),
-            child: const Row(
-              children: [
-                Icon(Icons.settings),
-                Text('Settings'),
-              ],
-            ),
+            icon: const Icon(Icons.settings, color: Colors.white), // White icon
           ),
-          TextButton(
+          IconButton(
             onPressed: () => (parentIndex != 3 ? _navigateToScreen(context, Menu()) : _navigateToParent(context)),
-            child: const Row(
-              children: [
-                Icon(Icons.density_small),
-                Text('Menu'),
-              ],
-            ),
+            icon: const Icon(Icons.density_small, color: Colors.white), // White icon
           ),
         ],
       ),

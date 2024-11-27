@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:manoa_parking_app/widgets/navbar.dart';
+import 'package:manoa_parking_app/widgets/submenu_navbar.dart';
 
 class ZoneDetails extends StatelessWidget {
   final String zoneTitle;
@@ -8,6 +8,7 @@ class ZoneDetails extends StatelessWidget {
   final String additionalInfo;
   final List<String> restrictions;
   final String mapImage;
+  final int parentIndex;
 
   const ZoneDetails({
     required this.zoneTitle,
@@ -16,6 +17,7 @@ class ZoneDetails extends StatelessWidget {
     required this.additionalInfo,
     required this.restrictions,
     required this.mapImage,
+    required this.parentIndex,
   });
 
   @override
@@ -118,7 +120,7 @@ class ZoneDetails extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: const Navbar(selfIndex: 1),
+      bottomNavigationBar: SubmenuNavbar(parentIndex: parentIndex),
     );
   }
 }

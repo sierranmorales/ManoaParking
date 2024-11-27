@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../widgets/navbar.dart';
+import '../widgets/submenu_navbar.dart';
 
 class Contact extends StatelessWidget {
   @override
@@ -84,7 +84,7 @@ class Contact extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: const Navbar(selfIndex: 3),
+      bottomNavigationBar: const SubmenuNavbar(parentIndex: 3),
     );
   }
 }

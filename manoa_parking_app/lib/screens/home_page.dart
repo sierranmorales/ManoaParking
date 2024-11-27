@@ -98,6 +98,7 @@ class ParkingHomePage extends StatelessWidget {
                     hours: zone['hours'],
                     additionalInfo: zone['additionalInfo'],
                     restrictions: zone['restrictions'],
+                    parentIndex: 0,
                   ),
                 );
               },

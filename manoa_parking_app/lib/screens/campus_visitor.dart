@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import '../widgets/submenu_navbar.dart';
 
 class CampusVisitor extends StatelessWidget {
+  final int parentIndex;
+
+  const CampusVisitor({
+    required this.parentIndex,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +23,7 @@ class CampusVisitor extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: const SubmenuNavbar(parentIndex: 3)
+      bottomNavigationBar: SubmenuNavbar(parentIndex: parentIndex)
     );
   }
 }

@@ -49,6 +49,7 @@ class Menu extends StatelessWidget {
                       'No overnight',
                     ],
                     mapImage: 'assets/images/zone_20_map.png',
+                    parentIndex: 3,
                   ),
                 );
               },
@@ -84,6 +85,7 @@ class Menu extends StatelessWidget {
                       'No overnight',
                     ],
                     mapImage: 'assets/images/zone_22_map.png',
+                    parentIndex: 3,
                   ),
                 );
               },
@@ -121,6 +123,7 @@ class Menu extends StatelessWidget {
                       'No overnight',
                     ],
                     mapImage: 'assets/images/upper_map.png',
+                    parentIndex: 3,
                   ),
                 );
               },

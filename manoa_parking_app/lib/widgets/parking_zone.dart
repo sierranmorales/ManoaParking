@@ -10,6 +10,7 @@ class ParkingZone extends StatelessWidget {
   final String hours;
   final String additionalInfo;
   final List<String> restrictions;
+  final int parentIndex;
 
   const ParkingZone({
     required this.zoneTitle,
@@ -20,6 +21,7 @@ class ParkingZone extends StatelessWidget {
     required this.hours,
     required this.additionalInfo,
     required this.restrictions,
+    required this.parentIndex,
   });
 
   @override
@@ -105,6 +107,7 @@ class ParkingZone extends StatelessWidget {
                           additionalInfo: additionalInfo,
                           restrictions: restrictions,
                           mapImage: mapImage,
+                          parentIndex: parentIndex,
                         ),
                       ),
                     );

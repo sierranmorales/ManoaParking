@@ -8,19 +8,19 @@ class ParkingHomePage extends StatelessWidget {
       'zoneTitle': 'Zone 20',
       'status': 'Lot Full',
       'permitRequired': true,
-      'mapImage': 'assets/zone_20_map.png',
+      'mapImage': 'assets/images/zone_20_map.png',
     },
     {
       'zoneTitle': 'Zone 22',
       'status': 'Available',
       'permitRequired': false,
-      'mapImage': 'assets/zone_22_map.png',
+      'mapImage': 'assets/images/zone_20_map.png',
     },
     {
       'zoneTitle': 'Upper Campus Visitor',
       'status': 'Available',
       'permitRequired': false,
-      'mapImage': 'assets/zone_22_map.png',
+      'mapImage': 'assets/images/zone_22_map.png',
     },
     //
   ];

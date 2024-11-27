@@ -9,20 +9,51 @@ class ParkingHomePage extends StatelessWidget {
       'status': 'Lot Full',
       'permitRequired': true,
       'mapImage': 'assets/images/zone_20_map.png',
+      'pricingDetails': '\$5 KIOSK FLAT RATE\n(excluding event parking)',
+      'hours': 'HOURS: 5am-midnight',
+      'additionalInfo': 'Pay at pay station. Credit card only. Cash not accepted.',
+      'restrictions': [
+        'Daily re-entry allowed',
+        'Valid on Upper Campus after 4pm',
+        'Non-refundable',
+        'Non-transferable',
+        'No overnight',
+      ],
     },
     {
       'zoneTitle': 'Zone 22',
       'status': 'Available',
       'permitRequired': false,
-      'mapImage': 'assets/images/zone_20_map.png',
+      'mapImage': 'assets/images/zone_22_map.png',
+      'pricingDetails': '\$5 KIOSK FLAT RATE\n(excluding event parking)',
+      'hours': 'HOURS: 6am-midnight',
+      'additionalInfo': 'Pay at pay station. Credit card only. Cash not accepted.',
+      'restrictions': [
+        'Daily re-entry allowed',
+        'Valid on Upper Campus after 4pm',
+        'Non-refundable',
+        'Non-transferable',
+        'No overnight',
+      ],
     },
     {
       'zoneTitle': 'Upper Campus Visitor',
       'status': 'Available',
       'permitRequired': false,
-      'mapImage': 'assets/images/zone_22_map.png',
+      'mapImage': 'assets/images/upper_map.png',
+      'pricingDetails': '\$5 KIOSK FLAT RATE\n(excluding event parking)\n\n'
+          '\$3 PER HALF HOUR\n(6am – 4pm)\n\$1 PER HOUR\n(4pm – midnight)',
+      'hours': '',
+      'additionalInfo': '• Pay at pay station. Credit card only. Cash not accepted.\n'
+          '• Subject to special event restrictions.\n\n'
+          'Note: Zone 22 Student Permits MAY NOT park outside their printed zone until after 4:00 PM',
+      'restrictions': [
+        'Daily re-entry allowed',
+        'Non-refundable',
+        'Non-transferable',
+        'No overnight',
+      ],
     },
-    //
   ];
 
   @override
@@ -35,12 +66,15 @@ class ParkingHomePage extends StatelessWidget {
         ),
         backgroundColor: const Color(0xFF234F32),
         centerTitle: true,
+        iconTheme: const IconThemeData(
+          color: Colors.white,
+        ),
       ),
       body: Column(
         children: [
           Container(
             padding: const EdgeInsets.all(16.0),
-            color: Colors.grey[300], // Light gray background for the "Where to Park" section
+            color: Colors.grey[300],
             width: double.infinity,
             child: const Text(
               'Where to Park',
@@ -60,6 +94,10 @@ class ParkingHomePage extends StatelessWidget {
                     status: zone['status'],
                     permitRequired: zone['permitRequired'],
                     mapImage: zone['mapImage'],
+                    pricingDetails: zone['pricingDetails'],
+                    hours: zone['hours'],
+                    additionalInfo: zone['additionalInfo'],
+                    restrictions: zone['restrictions'],
                   ),
                 );
               },

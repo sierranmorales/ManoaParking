@@ -6,12 +6,20 @@ class ParkingZone extends StatelessWidget {
   final String status;
   final bool permitRequired;
   final String mapImage;
+  final String pricingDetails;
+  final String hours;
+  final String additionalInfo;
+  final List<String> restrictions;
 
   const ParkingZone({
     required this.zoneTitle,
     required this.status,
     required this.permitRequired,
     required this.mapImage,
+    required this.pricingDetails,
+    required this.hours,
+    required this.additionalInfo,
+    required this.restrictions,
   });
 
   @override
@@ -23,12 +31,19 @@ class ParkingZone extends StatelessWidget {
         borderRadius: BorderRadius.circular(8),
       ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center, // Center content horizontally
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           // Zone Title
           Container(
+            width: double.infinity, // Ensures the title spans the full width
             padding: const EdgeInsets.all(8.0),
-            color: const Color(0xFF234F32), // Green header
+            decoration: const BoxDecoration(
+              color: Color(0xFF234F32), // Green header
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(8), // Match container's top corners
+                topRight: Radius.circular(8),
+              ),
+            ),
             child: Text(
               zoneTitle,
               textAlign: TextAlign.center,
@@ -42,7 +57,7 @@ class ParkingZone extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center, // Center align text
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 // Status Text
                 Text(
@@ -58,10 +73,10 @@ class ParkingZone extends StatelessWidget {
                 Text(
                   permitRequired ? 'Permit Required' : 'No Permit Required',
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
-                    color: const Color(0xFF234F32),
+                    color: Color(0xFF234F32),
                   ),
                 ),
                 const SizedBox(height: 10),
@@ -85,8 +100,10 @@ class ParkingZone extends StatelessWidget {
                       MaterialPageRoute(
                         builder: (context) => ZoneDetails(
                           zoneTitle: zoneTitle,
-                          status: status,
-                          permitRequired: permitRequired,
+                          pricingDetails: pricingDetails,
+                          hours: hours,
+                          additionalInfo: additionalInfo,
+                          restrictions: restrictions,
                           mapImage: mapImage,
                         ),
                       ),

@@ -21,5 +21,4 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/images/zone_20_map.png
-    - assets/images/zone_22_map.png
+    - assets/

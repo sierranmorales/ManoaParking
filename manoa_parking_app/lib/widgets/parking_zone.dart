@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:manoa_parking_app/screens/zone_details.dart';
 
 class ParkingZone extends StatelessWidget {
+
   final String zoneTitle;
   final String status;
   final bool permitRequired;
   final String mapImage;
 
-  ParkingZone({
+  const ParkingZone({
     required this.zoneTitle,
     required this.status,
     required this.permitRequired,
@@ -20,16 +22,27 @@ class ParkingZone extends StatelessWidget {
       children: [
         Text(
           zoneTitle,
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
-        SizedBox(height: 8),
+        const SizedBox(height: 8),
         TextButton(
           onPressed: () {
-            // Handle "More Info" press
+            // Navigate to the ParkingZoneDetailScreen
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ZoneDetails(
+                  zoneTitle: zoneTitle,
+                  status: status,
+                  permitRequired: permitRequired,
+                  mapImage: mapImage,
+                ),
+              ),
+            );
           },
-          child: Text('More Info'),
+          child: const Text('More Info'),
         ),
-        SizedBox(height: 8),
+        const SizedBox(height: 8),
         Text(
           'Status: $status',
           style: TextStyle(
@@ -38,11 +51,11 @@ class ParkingZone extends StatelessWidget {
           ),
         ),
         if (permitRequired)
-          Text(
+          const Text(
             'Permit Required',
             style: TextStyle(fontSize: 16, color: Colors.red),
           ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         Image.asset(mapImage),
       ],
     );
